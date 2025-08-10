@@ -2,101 +2,78 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Travel Hashtag Performance</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Hashtag Report</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background: #f9f9f9;
+            background-color: #f4f8fb;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        header img {
+            height: 60px;
+            margin-right: 15px;
         }
         h1 {
-            text-align: center;
-            color: #333;
+            color: #2c3e50;
         }
         table {
-            width: 50%;
-            margin: 20px auto;
             border-collapse: collapse;
-            background: white;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-            text-align: center;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         th, td {
+            border: 1px solid #ddd;
             padding: 10px;
+            text-align: center;
         }
         th {
+            background-color: #3498db;
+            color: white;
+        }
+        tr:nth-child(even) {
             background-color: #f2f2f2;
         }
-        .chart-container {
-            width: 60%;
-            margin: auto;
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
         }
     </style>
 </head>
 <body>
-
-    <h1>Travel Hashtag Performance</h1>
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Globe_icon.svg/2048px-Globe_icon.svg.png" alt="Travel Logo">
+        <h1>Travel Hashtag Report</h1>
+    </header>
 
     <table>
         <tr>
             <th>Hashtag</th>
-            <th>Impressions</th>
-            <th>Engagements</th>
-            <th>CTR (%)</th>
+            <th>Posts (Estimated)</th>
+            <th>Engagement Rate</th>
         </tr>
         <tr>
             <td>#vietnam</td>
-            <td>150,000</td>
-            <td>12,500</td>
-            <td>8.33</td>
+            <td>1,250,000</td>
+            <td>4.5%</td>
         </tr>
         <tr>
             <td>#vietnamesefood</td>
-            <td>95,000</td>
-            <td>9,000</td>
-            <td>9.47</td>
+            <td>850,000</td>
+            <td>3.9%</td>
         </tr>
     </table>
 
-    <div class="chart-container">
-        <canvas id="barChart"></canvas>
-    </div>
-
-    <script>
-        const ctx = document.getElementById('barChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['#vietnam', '#vietnamesefood'],
-                datasets: [
-                    {
-                        label: 'Impressions',
-                        data: [150000, 95000],
-                        backgroundColor: 'rgba(54, 162, 235, 0.7)'
-                    },
-                    {
-                        label: 'Engagements',
-                        data: [12500, 9000],
-                        backgroundColor: 'rgba(255, 99, 132, 0.7)'
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { position: 'top' }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    </script>
-
+    <footer>
+        Data Source: <a href="https://www.instagram.com/explore/tags/vietnam/" target="_blank">Instagram</a>  
+        <br>Report generated on: 11 Aug 2025
+    </footer>
 </body>
 </html>
