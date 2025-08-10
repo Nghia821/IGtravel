@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Hashtag Performance</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: white;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th, td {
+            padding: 10px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .chart-container {
+            width: 60%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Travel Hashtag Performance</h1>
+
+    <table>
+        <tr>
+            <th>Hashtag</th>
+            <th>Impressions</th>
+            <th>Engagements</th>
+            <th>CTR (%)</th>
+        </tr>
+        <tr>
+            <td>#vietnam</td>
+            <td>150,000</td>
+            <td>12,500</td>
+            <td>8.33</td>
+        </tr>
+        <tr>
+            <td>#vietnamesefood</td>
+            <td>95,000</td>
+            <td>9,000</td>
+            <td>9.47</td>
+        </tr>
+    </table>
+
+    <div class="chart-container">
+        <canvas id="barChart"></canvas>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('barChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['#vietnam', '#vietnamesefood'],
+                datasets: [
+                    {
+                        label: 'Impressions',
+                        data: [150000, 95000],
+                        backgroundColor: 'rgba(54, 162, 235, 0.7)'
+                    },
+                    {
+                        label: 'Engagements',
+                        data: [12500, 9000],
+                        backgroundColor: 'rgba(255, 99, 132, 0.7)'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
